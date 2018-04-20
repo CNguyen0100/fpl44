@@ -6,8 +6,6 @@ using UnityEngine;
 //[ExecuteInEditMode]
 public class CableScript : MonoBehaviour
 {
-
-
     LineRenderer line;
 
     //the Start of the cable will be the transform of the Gameobject that has this component.
@@ -29,6 +27,10 @@ public class CableScript : MonoBehaviour
     {
         endPointTransform = t.transform;
     }
+    public GameObject getEndPoint()
+    {
+        return endPointTransform.gameObject;
+    }
     void Start()
     {
         line = GetComponent<LineRenderer>();
@@ -41,8 +43,14 @@ public class CableScript : MonoBehaviour
 
     }
 
-
-
+    public void setSagAmplitude(float i)
+    {
+        sagAmplitude = i;
+    }
+    public void setPointInLine(int i)
+    {
+        pointsInLineRenderer = i;
+    }
     void Update()
     {
         Animate();
